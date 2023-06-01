@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import closeIcon from '../public/close.png';
-import zuroLogo from '../public/zuro_logo.png';
+import zuroLogo from '../public/zuro_logo.png'
 
 const Home: NextPage = () => {
   return (
