@@ -107,8 +107,8 @@ const Home: NextPage = () => {
         </Formik>
 
          <p className="text-left font-bold mt-16 mx-auto w-[470px]">Do you have a current provider</p>
-         <div className="flex flex-row gap-5 justify-center items-center">
-          <button>Yes</button>
+         <div className="flex flex-row gap-5 justify-left items-center w-[470px] mx-auto mt-3">
+          <button className="py-5 px-10 rounded outline-gray-200 border border-gray-200">Yes</button>
           <button>No</button>
          </div>
       </section>
