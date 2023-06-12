@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -7,7 +8,20 @@ import progress1 from '../public/progress1.png';
 import user from '../public/user.png';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
+import Link from 'next/link';
+
 const Home: NextPage = () => {
+  const [checkedButton, setCheckedButton] = useState('');
+  const [checkedButton2, setCheckedButton2] = useState('');
+
+  const handleButtonClick = (button) => {
+    setCheckedButton(button);
+  }
+
+  const handleButtonClick2 = (button) => {
+    setCheckedButton2(button);
+  };
+  
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
       <Head>
@@ -106,12 +120,58 @@ const Home: NextPage = () => {
           </Form>
         </Formik>
 
+         {/* current provider ask */}
          <p className="text-left font-bold mt-16 mx-auto w-[470px]">Do you have a current provider</p>
          <div className="flex flex-row gap-5 justify-left items-center w-[470px] mx-auto mt-3">
-          <button className="py-5 px-10 rounded outline-gray-200 border border-gray-200">Yes</button>
-          <button>No</button>
+           <button 
+             className={`${
+            checkedButton === 'yes' ? 'bg-[#1DCD6D]' : 'bg-transparent'
+          } w-56 h-16 rounded font-bold border border-grey-200 outline-grey-200`}
+          onClick={() => handleButtonClick('yes')}
+             >Yes
+           </button>
+           <button
+          className={`${
+            checkedButton === 'no' ? 'bg-[#1DCD6D]' : 'bg-transparent'
+          } w-56 h-16 rounded font-bold border border-grey-200 outline-grey-200`}
+          onClick={() => handleButtonClick('no')}
+        >
+          No
+        </button>
          </div>
-      </section>
+
+         {/* select provider ask */}
+         {checkedButton === 'yes' && (
+         <div>
+          <p className="text-left font-bold mt-16 mx-auto w-[470px]">Select provider</p>
+
+             <div className="flex flex-row gap-5 justify-left items-center w-[470px] mx-auto mt-3">
+             <button 
+             className={`${
+            checkedButton2 === 'y' ? 'bg-[#1DCD6D]' : 'bg-transparent'
+          } w-56 h-16 rounded font-bold border border-grey-200 outline-grey-200`}
+          onClick={() => handleButtonClick2('y')}
+             >Select Provider
+           </button>
+               {/* Enter Manually Btn */}
+             <button 
+             className={`${
+            checkedButton2 === 'n' ? 'bg-[#1DCD6D]' : 'bg-transparent'
+          } w-56 h-16 rounded font-bold border border-grey-200 outline-grey-200`}
+          onClick={() => handleButtonClick2('n')}
+             >Enter Manually
+           </button>
+           </div>
+         </div>
+         )}
+         <Link href="/page2">
+        <a>
+          <button className="bg-[#9750EF] hover:bg-[#cda7fc] duration-300 ease-in-out h-16 w-[465px] mt-20 rounded font-bold mx-auto">
+            Next
+          </button>
+        </a>
+      </Link>
+       </section>
       </main>
     </div>
   )
