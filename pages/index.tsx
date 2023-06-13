@@ -119,6 +119,7 @@ const Home: NextPage = () => {
             </div>
           </Form>
         </Formik>
+         
 
          {/* current provider ask */}
          <p className="text-left font-bold mt-16 mx-auto w-[470px]">Do you have a current provider</p>
@@ -162,6 +163,22 @@ const Home: NextPage = () => {
              >Enter Manually
            </button>
            </div>
+           <Formik>
+            <Form>
+              {/* FieldOne */}
+              <div className="flex flex-col mt-20 w-[470px] mx-auto">
+                <Field
+                  type="text"
+                  id="selectProvider"
+                  name="selectProvider"
+                  className="bg-[#181818] border-2 border-[#4A4754] p-4 rounded-md text-white placeholder-white"
+                  placeholder="Select Provider"
+                />
+                
+                <ErrorMessage name="selectProvider" component="div" className="text-red-500" />
+              </div>
+            </Form>
+           </Formik>
          </div>
          )}
          <Link href="/page2">
