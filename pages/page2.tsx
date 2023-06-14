@@ -1,8 +1,13 @@
 import Head from "next/head";
-import ProgressNav from "../component/ProgressNav";
-import Heading from "../component/Heading";
+import Image from "next/image";
+import homeOwners from '../public/page2/home-owners.svg';
+import condoInsurance from '../public/page2/buildings-2.svg';
+import rentersInsurance from '../public/page2/user-edit.svg';
+
+import ProgressNav from "../components/ProgressNav";
+import Heading from "../components/Heading";
 import progress1 from '../public/progress1.png';
-import InsuranceType from '../component/Insurance'
+import InsuranceType from '../components/Insurance'
 import Link from "next/link";
 import { useState } from "react";
 
@@ -30,16 +35,28 @@ function page2() {
         {/* Insurance Types */}
         <div className="flex gap-5 flex-wrap justify-center m-auto" style={{minWidth: '300px', maxWidth: '550px'}}>
           <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'home' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('home')}>
-            <p>icon</p>
+            <Image
+              src={homeOwners}
+              alt="home owners icon"
+              width="100px"
+            />
             <p>Homeowners Insurance</p>
           </div>
           <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'condo' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}} onClick={() => handleClick('condo')}>
-            <p>icon</p>
-            <p>Condo Insurance</p>
+            <Image
+              src={condoInsurance}
+              alt="condo insurance icon"
+              width="100px"
+            />
+            <p>Condo <br/>Insurance</p>
           </div>
           <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'rent' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('rent')}>
-            <p>icon</p>
-            <p>Renters Insurance</p>
+            <Image
+              src={rentersInsurance}
+              alt="renters insurance icon"
+              width="100px"
+            />
+            <p>Renters <br/>Insurance</p>
           </div>
         </div>
 

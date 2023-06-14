@@ -9,8 +9,8 @@ import user from '../public/user.png';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import Link from 'next/link';
-import Heading from '../component/Heading';
-import ProgressNav from '../component/ProgressNav';
+import Heading from '../components/Heading';
+import ProgressNav from '../components/ProgressNav';
 
 const Home: NextPage = () => {
   const [checkedButton, setCheckedButton] = useState('');
