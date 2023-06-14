@@ -9,6 +9,8 @@ import user from '../public/user.png';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import Link from 'next/link';
+import Heading from '../component/Heading';
+import ProgressNav from '../component/ProgressNav';
 
 const Home: NextPage = () => {
   const [checkedButton, setCheckedButton] = useState('');
@@ -30,31 +32,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full h-full flex-1 flex-col text-center bg-black">
-    <nav className="flex flex-row items-center justify-between px-20 pt-5 bg-green">
-      <Image
-        src={zuroLogo}
-        alt="close_icon"
-        width="70px"
-        height="20px"
-    />
-      <Image
-        src={progress1}
-        alt="progress1"
-        width="238px"
-        height="19px"
-    />
-      <Image
-        src={closeIcon}
-        className="invert cursor-pointer"
-        alt="close_icon"
-        width="12px"
-        height="12px"
-    />
-    </nav>
+
+        <ProgressNav progress={progress1} alt={'progress1'}/>
 
        <section className="mt-10 text-white flex flex-col">
-  <h1 className="font-bold text-6xl text-center mb-4">Get a Free Quote</h1>
-  <h3 className="text-md text-left mx-auto w-[470px]">Fill out the form below to receive a personalized insurance quote tailored to your unique needs and preferences. Our experienced team will review your information and provide you with the best coverage options available.</h3>
+        <Heading />
 
         <p className="text-left font-bold mt-3 mx-auto w-[470px]">Personal Information</p>
 
