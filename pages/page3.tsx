@@ -97,7 +97,7 @@ function page3() {
         </div>
 
         {/* next button */}
-        <Link href="/page3">
+        <Link href="/signup">
           <button className="bg-[#9750EF] hover:bg-[#cda7fc] duration-300 ease-in-out h-16 w-[465px] mt-20 rounded font-bold mx-auto">
             Submit
           </button>
