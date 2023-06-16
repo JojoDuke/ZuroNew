@@ -43,7 +43,7 @@ const SignUp = () => {
                     {/* buttons */}
                     <div className="flex flex-col gap-3">
                         <div>
-                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded" style={{border: "solid 1px #4A4754"}}>
+                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded hover:bg-[#4A4754] duration-300 ease-in-out" style={{border: "solid 1px #4A4754"}}>
                                 <Image 
                                     src={google}
                                     width="30px"
@@ -53,7 +53,7 @@ const SignUp = () => {
                             </button>
                         </div>
                         <div>
-                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded" style={{border: "solid 1px #4A4754"}}>
+                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded hover:bg-[#4A4754] duration-300 ease-in-out" style={{border: "solid 1px #4A4754"}}>
                                 <Image 
                                     src={facebook}
                                     width="30px"
@@ -83,7 +83,7 @@ const SignUp = () => {
                                 />
                             </div>
 
-                            <button className="bg-[#9750EF] w-[100%] p-[10px] rounded">Sign up with Email</button>
+                            <button className="bg-[#9750EF] w-[100%] p-[10px] rounded hover:bg-[#cda7fc] duration-300 ease-in-out">Sign up with Email</button>
                         </form>
                     </div>
                 </div>
