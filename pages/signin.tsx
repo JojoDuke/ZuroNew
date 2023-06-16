@@ -43,8 +43,9 @@ const S = () => {
 
                     {/* buttons */}
                     <div className="flex flex-col gap-3">
+                        {/* google button */}
                         <div>
-                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded" style={{border: "solid 1px #4A4754"}}>
+                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded hover:bg-[#4A4754] duration-300 ease-in-out" style={{border: "solid 1px #4A4754"}}>
                                 <Image 
                                     src={google}
                                     width="30px"
@@ -53,14 +54,16 @@ const S = () => {
                                 Continue with Google
                             </button>
                         </div>
+
+                        {/* facebook button */}
                         <div>
-                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded" style={{border: "solid 1px #4A4754"}}>
+                            <button className="flex justify-center gap-2 w-[100%] h-[64] p-[10px] rounded hover:bg-[#4A4754] duration-300 ease-in-out" style={{border: "solid 1px #4A4754"}}>
                                 <Image 
                                     src={facebook}
                                     width="30px"
                                     height="30px"
                                 />
-                                Continue with Google
+                                Continue with Facebook
                             </button>
                         </div>
 
@@ -71,6 +74,7 @@ const S = () => {
 
                         {/* form */}
                         <form action="" onSubmit={e => e.preventDefault()}>
+                            {/* email */}
                             <div className="flex gap-2 bg-[#181818] p-[10px] mb-5 rounded" style={{border: "solid 1px #4A4754"}}>
                                 <Image
                                     src={envelop}
@@ -83,6 +87,7 @@ const S = () => {
                                     style={{background: "none"}}
                                 />
                             </div>
+                            {/* password */}
                             <div className="flex gap-2 bg-[#181818] p-[10px] mb-5 rounded" style={{border: "solid 1px #4A4754"}}>
                                 <Image
                                     src={lock}
@@ -95,6 +100,7 @@ const S = () => {
                                     style={{background: "none"}}
                                 />
                             </div>
+                            {/* checkbox */}
                             <div className="flex gap-2 mb-5">
                                 
                                 <input 
@@ -103,7 +109,8 @@ const S = () => {
                                 />
                                 <label htmlFor="checkbox">Stay logged in</label>
                             </div>
-                            <button className="bg-[#9750EF] w-[100%] p-[10px] rounded mb-5">Log In</button>
+                            {/* log in button */}
+                            <button className="bg-[#9750EF] w-[100%] p-[10px] rounded mb-5 hover:bg-[#cda7fc] duration-300 ease-in-out">Log In</button>
                             <p className="text-[#9750EF]">I forgot my password</p>
                         </form>
                     </div>
