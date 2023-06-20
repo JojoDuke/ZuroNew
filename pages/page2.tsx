@@ -13,7 +13,6 @@ import motorcycleInsurance from '../public/page2/motorcycle.svg'
 import ProgressNav from "../components/ProgressNav";
 import Heading from "../components/Heading";
 import progress2 from '../public/progress2.png';
-import InsuranceType from '../components/Insurance'
 import Link from "next/link";
 import { useState } from "react";
 
@@ -23,7 +22,7 @@ function page2() {
         setType(card)
     }
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
         <title>Zuro</title>
         <link rel="icon" href="/favicon.ico" />
@@ -33,7 +32,7 @@ function page2() {
 
         <ProgressNav progress={progress2} alt={'progress2'}/>
 
-       <section className="mt-10 text-white flex flex-col">
+       <section className="my-10 text-white flex flex-col">
         <Heading />
 
         <p className="text-center font-bold my-8 mx-auto w-[470px]">Select Insurance Type</p>

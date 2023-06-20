@@ -19,7 +19,7 @@ function page3() {
         setType(card)
     }
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
         <title>Zuro</title>
         <link rel="icon" href="/favicon.ico" />
@@ -29,7 +29,7 @@ function page3() {
 
         <ProgressNav progress={progress3} alt={'progress3'}/>
 
-       <section className="mt-10 text-white flex flex-col">
+       <section className="my-10 text-white flex flex-col">
         <Heading />
 
         <p className="text-center font-bold my-8 mx-auto w-[470px]">Preferred Quoting Method</p>

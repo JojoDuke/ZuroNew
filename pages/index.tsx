@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import closeIcon from '../public/close.png';
-import zuroLogo from '../public/zuro_logo.png';
 import progress1 from '../public/progress1.png';
-import user from '../public/user.png';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import Link from 'next/link';
@@ -25,7 +21,7 @@ const Home: NextPage = () => {
   };
   
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
         <title>Zuro</title>
         <link rel="icon" href="/favicon.ico" />
@@ -35,7 +31,7 @@ const Home: NextPage = () => {
 
         <ProgressNav progress={progress1} alt={'progress1'}/>
 
-       <section className="mt-10 text-white flex flex-col">
+       <section className="my-10 text-white flex flex-col">
         <Heading />
 
         <p className="text-left font-bold mt-3 mx-auto w-[470px]">Personal Information</p>

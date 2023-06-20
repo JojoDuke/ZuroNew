@@ -83,7 +83,9 @@ const SignUp = () => {
                                 />
                             </div>
 
-                            <button className="bg-[#9750EF] w-[100%] p-[10px] rounded hover:bg-[#cda7fc] duration-300 ease-in-out">Sign up with Email</button>
+                            <Link href='page4'>
+                                <button className="bg-[#9750EF] w-[100%] p-[10px] rounded hover:bg-[#cda7fc] duration-300 ease-in-out">Sign up with Email</button>
+                            </Link>
                         </form>
                     </div>
                 </div>

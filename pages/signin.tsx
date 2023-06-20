@@ -110,7 +110,9 @@ const S = () => {
                                 <label htmlFor="checkbox">Stay logged in</label>
                             </div>
                             {/* log in button */}
-                            <button className="bg-[#9750EF] w-[100%] p-[10px] rounded mb-5 hover:bg-[#cda7fc] duration-300 ease-in-out">Log In</button>
+                            <Link href='page4'>
+                                <button className="bg-[#9750EF] w-[100%] p-[10px] rounded mb-5 hover:bg-[#cda7fc] duration-300 ease-in-out">Log In</button>
+                            </Link>
                             <p className="text-[#9750EF]">I forgot my password</p>
                         </form>
                     </div>
