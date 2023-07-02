@@ -22,6 +22,7 @@ const Home: NextPage = () => {
   
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
+      
       <Head>
         <title>Zuro</title>
         <link rel="icon" href="/favicon.ico" />
