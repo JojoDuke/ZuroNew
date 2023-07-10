@@ -15,20 +15,23 @@ const Page5 = () => {
     const [active, setActive] = useState(false)
     const [scheduleComplete, setScheduleComplete] = useState(false)
     const [date, setDate] = useState('')
+    const [contact, setContact] = useState('')
     // handleSelectchange
     const handleSelectChange = e => {
         setCurrentValue(e.target.value)
     }
 
     //handleSchedule Quote Btn
-    const handleScheduleClick = e => {
+    const handleScheduleClick = value => {
         setSchedule(!schedule)
         setScheduleComplete(false)
         setActive(false)
+        setContact(value)
     }
 
     //handleNow Btn
-    const handleNowClick = ()=> {
+    const handleNowClick = value => {
+        setContact(value)
         setSchedule(false)
     }
 
@@ -81,11 +84,11 @@ const Page5 = () => {
                 
                 <h3>When would you preferred t be contacted?</h3>
                 <div className='flex gap-3 mt-5'>
-                    <button onClick={handleNowClick} className="bg-[#E5AD3E] h-[64px] rounded w-[180px] flex justify-center items-center gap-3">
+                    <button onClick={() => handleNowClick('n')} className={`${contact === 'n' ? "bg-[#E5AD3E]" : "bg-transparent"} h-[64px] rounded border w-[180px] flex justify-center items-center gap-3`}>
                         <Image src={tick} />
                         Now
                     </button>
-                    <button onClick={handleScheduleClick} className="bg-[#1DCD6D] h-[64px] rounded w-[180px] flex justify-center items-center gap-3">
+                    <button onClick={()=>handleScheduleClick('y')} className={`${contact === 'y' ? "bg-[#1DCD6D]" : "bg-transparent"} h-[64px] rounded border w-[180px] flex justify-center items-center gap-3`}>
                         <Image src={calender} />
                         Schedule quote
                     </button>
@@ -142,7 +145,7 @@ const Page5 = () => {
                     </div>
                 }
 
-                <Link href="/page5">
+                <Link href="/page6">
                     <button className="bg-[#9750EF] hover:bg-[#cda7fc] duration-300 ease-in-out h-16 w-[80%] mt-20 rounded font-bold flex items-center justify-center">
                         Submit
                         <Image src={next} />

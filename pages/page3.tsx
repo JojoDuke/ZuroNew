@@ -14,7 +14,14 @@ import { useState } from "react";
 import Image from "next/image";
 
 function page3() {
+  //useState
     const [type, setType] = useState('calls')
+    const [schedule, setSchedule] = useState('')
+    //handleSchdedule
+    const handleSchedule = value => {
+      setSchedule(value)
+    }
+    //handleClick
     const handleClick = (card) => {
         setType(card)
     }
@@ -29,7 +36,7 @@ function page3() {
 
         <ProgressNav progress={progress3} alt={'progress3'}/>
 
-       <section className="my-10 text-white flex flex-col">
+      <section className="my-10 text-white flex flex-col">
         <Heading />
 
         <p className="text-center font-bold my-8 mx-auto w-[470px]">Preferred Quoting Method</p>
@@ -91,8 +98,12 @@ function page3() {
         <div >
             <p className="my-8">Would you preferred to be contacted?</p>
             <div className="flex gap-5 justify-center mt-[20px]">
-                <button className="bg-[#E5AD3E] w-[190px] h-[64.42px] rounded-lg">Now</button>
-                <button className="bg-[#1DCD6D] w-[190px] h-[64.42px] rounded-lg">Schedule quote</button>
+                <button
+                  onClick={() => handleSchedule('n')}
+                  className={`${schedule === 'n' ? "bg-[#E5AD3E]" : "bg-transparent"} w-[190px] h-[64.42px] rounded-lg border`}>Now</button>
+                <button 
+                  onClick={()=> handleSchedule('y')}
+                  className={`${schedule === 'y' ? "bg-[#1DCD6D]" : "bg-transparent"} w-[190px] h-[64.42px] rounded-lg border`}>Schedule quote</button>
             </div>
         </div>
 
