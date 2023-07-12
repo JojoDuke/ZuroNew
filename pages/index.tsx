@@ -1,10 +1,13 @@
-import { useState } from 'react';
-import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from "next/image"
+import Link from 'next/link';
+import type { NextPage } from 'next';
+import { useState } from 'react';
+
 import progress1 from '../public/progress1.png';
+import userImg from '../public/user.png';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
-import Link from 'next/link';
 import Heading from '../components/Heading';
 import ProgressNav from '../components/ProgressNav';
 
@@ -51,17 +54,25 @@ const Home: NextPage = () => {
           >
           <Form>
             {/* Fullname field */}
-            <div className="flex flex-col mt-4 w-[470px] mx-auto">
-              <Field
-                type="text"
-                id="fullName"
-                name="fullName"
-                className="bg-[#181818] border-2 border-[#4A4754] p-4 rounded-md text-white placeholder-white"
-                placeholder="Enter full name"
-              />
+            <div className="mt-4 mx-auto w-[470px]">
+              
+              <div className="flex">
+                <div className="w-10 h-10 absolute z-10 ml-1 mt-3">
+                  <Image src={userImg} alt="User" className="h-6 w-6" />
+                </div>
+                  <Field
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  className="bg-[#181818] w-[470px] border-2 border-[#4A4754] p-4 rounded-md text-white placeholder-white relative pl-12"
+                  placeholder="Enter full name"
+                />
+              </div>
               
               <ErrorMessage name="fullName" component="div" className="text-red-500" />
             </div>
+
+
 
             {/* Email field */}
             <div className="flex flex-col mt-4 w-[470px] mx-auto">
