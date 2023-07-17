@@ -29,13 +29,13 @@ const SignUp = () => {
         </nav>
 
         {/* section */}
-       <section className="my-10 text-white mx-[auto] w-[80%]">
+       <section className=" text-white mx-[auto] w-[80%]">
             {/* hero container */}
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between">
                 <div className="w-[35%]">
 
                     {/* heading */}
-                    <div className="mb-28 text-left">
+                    <div className="mb-16 text-left">
                         <h2 className="text-[50px] font-bold">Don't miss out!</h2>
                         <p>Join the Zuro community and be able to enjoy all the benefits of the best Insurance Lead generation system.</p>
                     </div>
@@ -96,11 +96,15 @@ const SignUp = () => {
                         alt=""
                         width="943px"
                         height="943px"
+                        className=""
                     />
                 </div>
             </div>
-        {/* already have an account */}
-        <p className="text-white text-left">Already have an account? <Link href="/signin">Login</Link></p>
+            {/* already have an account */}
+            <div className="flex gap-1">
+                <p className=" text-[#333] text-left">Already have an account?</p>
+                <Link href="/signin" className="text-[#bebaba]">Login</Link>
+            </div>
         </section>
 
         </main>

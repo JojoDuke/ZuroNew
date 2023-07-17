@@ -9,7 +9,7 @@ import or from '../public/signin signup/or.svg'
 import envelop from '../public/signin signup/envelop.svg'
 import lock from '../public/signin signup/lock.svg'
 
-const S = () => {
+const SignIn = () => {
     return(
         <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
@@ -30,13 +30,13 @@ const S = () => {
         </nav>
 
         {/* section */}
-       <section className="my-10 mx-[auto] w-[80%] ">
+       <section className="text-white mx-[auto] w-[80%] mt-10">
             {/* hero container */}
-            <div className="flex items-center justify-between mb-20">
-                <div className="w-[35%] text-white">
+            <div className="flex items-center justify-between">
+                <div className="w-[35%]">
 
                     {/* heading */}
-                    <div className="mb-28 text-left">
+                    <div className="mb-16 text-left">
                         <h2 className="text-[50px] font-bold">Log In</h2>
                         <p>Join the Zuro community and be able to enjoy all the benefits of the best Insurance Lead generation system.</p>
                     </div>
@@ -128,8 +128,11 @@ const S = () => {
                 </div>
             </div>
 
-        {/* don't have an account */}
-        <p className="text-white text-left">Don't have an account? <Link href="/signup" className="font-bold">Sign Up</Link></p>
+            {/* don't have an account */}
+            <div className="flex my-5 gap-1">
+                <p className="text-[#333] text-left">Don't have an account?</p>
+                <Link href="/signup" className="text-[#bebaba]">Sign Up</Link>
+            </div>
         </section>
 
         </main>
@@ -137,4 +140,4 @@ const S = () => {
     )
 }
 
-export default S
+export default SignIn

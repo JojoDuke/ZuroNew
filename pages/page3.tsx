@@ -15,7 +15,7 @@ import Image from "next/image";
 
 function page3() {
   //useState
-    const [type, setType] = useState('calls')
+    const [type, setType] = useState('Calls')
     const [schedule, setSchedule] = useState('')
     //handleSchdedule
     const handleSchedule = value => {
@@ -25,6 +25,33 @@ function page3() {
     const handleClick = (card) => {
         setType(card)
     }
+
+    const quotingMethodList = [
+      {
+        src: calls,
+        name: "Calls",
+      },
+      {
+        src: online,
+        name: "Online",
+      },
+      {
+        src: inPerson,
+        name: "In -person",
+      },
+      {
+        src: email,
+        name: "E-mail",
+      },
+      {
+        src: textMessage,
+        name: "Text Message",
+      },
+      {
+        src: chatbot,
+        name: "Chatbot",
+      },
+    ]
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
@@ -43,55 +70,20 @@ function page3() {
 
         {/* Preferred Quoting Types */}
         <div className="flex gap-5 flex-wrap justify-center m-auto" style={{minWidth: '300px', maxWidth: '636.14px'}}>
-        <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'calls' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('calls')}>
-            <Image
-              src={calls}
-              alt="calls icon"
-              width="100px"
-            />
-            <p>Calls</p>
-          </div>
-        <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'online' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('online')}>
-            <Image
-              src={online}
-              alt="online icon"
-              width="100px"
-            />
-            <p>Online</p>
-          </div>
-        <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'in-person' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('in-person')}>
-            <Image
-              src={inPerson}
-              alt="in-person icon"
-              width="100px"
-            />
-            <p>In-person</p>
-          </div>
-        <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'email' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('email')}>
-            <Image
-              src={email}
-              alt="email icon"
-              width="100px"
-            />
-            <p>E-mail</p>
-          </div>
-        <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'text-message' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('text-message')}>
-            <Image
-              src={textMessage}
-              alt="text message icon"
-              width="100px"
-            />
-            <p>Text Message</p>
-          </div>
-        <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'chatbot' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('chatbot')}>
-            <Image
-              src={chatbot}
-              alt="chatbot icon"
-              width="100px"
-            />
-            <p>Chatbot</p>
-          </div>
-          
+          {
+            quotingMethodList.map(list => {
+              return(
+                <div key={list.name} className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer bg-[#181818] hover:bg-[#954DEE] duration-300 ease-in-out" style={{background: `${type === list.name ? 'linear-gradient(#954DEE, #5D05CB)' : ''}`}}  onClick={() => handleClick(list.name)}>
+                  <Image
+                    src={list.src}
+                    alt="pet insurance icon"
+                    width="100px"
+                  />
+                  <p>{list.name}</p>
+                </div>
+              )
+            })
+          }
         </div>
 
         {/* contact */}
@@ -100,10 +92,10 @@ function page3() {
             <div className="flex gap-5 justify-center mt-[20px]">
                 <button
                   onClick={() => handleSchedule('n')}
-                  className={`${schedule === 'n' ? "bg-[#E5AD3E]" : "bg-transparent"} w-[190px] h-[64.42px] rounded-lg border`}>Now</button>
+                  className={`${schedule === 'n' ? "bg-[#E5AD3E]" : ""} hover:bg-[#E5AD3E] duration-300 ease-in-out w-[190px] h-[64.42px] rounded-lg border`}>Now</button>
                 <button 
                   onClick={()=> handleSchedule('y')}
-                  className={`${schedule === 'y' ? "bg-[#1DCD6D]" : "bg-transparent"} w-[190px] h-[64.42px] rounded-lg border`}>Schedule quote</button>
+                  className={`${schedule === 'y' ? "bg-[#1DCD6D]" : ""} hover:bg-[#1DCD6D] duration-300 ease-in-out w-[190px] h-[64.42px] rounded-lg border`}>Schedule quote</button>
             </div>
         </div>
 
