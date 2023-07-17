@@ -84,13 +84,13 @@ const Page6 = () => {
                     <div className='flex gap-3 my-5'>
                         <button 
                             onClick={()=>handleInsurance('y')}
-                            className={`${insurance === 'y'? 'bg-[#1DCD6D]' : 'bg-transparent'} h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
+                            className={`${insurance === 'y'? 'bg-[#1DCD6D]' : ''} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
                             <Image src={markSvg} />
                             Yes
                         </button>
                         <button 
                             onClick={()=>handleInsurance('n')}
-                            className={`${insurance === 'n'? 'bg-[#1DCD6D]' : 'bg-transparent'} h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
+                            className={`${insurance === 'n'? 'bg-[#1DCD6D]' : ''} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
                             <Image src={crossSvg} />
                             No
                         </button>
@@ -137,13 +137,13 @@ const Page6 = () => {
                         <div className='flex gap-3 my-5'>
                             <button 
                                 onClick={()=>handleAccidents('y')}
-                                className={`${accidents === 'y'? 'bg-[#1DCD6D]' : 'bg-transparent'} h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
+                                className={`${accidents === 'y'? 'bg-[#1DCD6D]' : ''} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
                                 <Image src={markSvg} />
                                 Yes
                             </button>
                             <button 
                                 onClick={()=>handleAccidents('n')}
-                                className={`${accidents === 'n'? 'bg-[#1DCD6D]' : 'bg-transparent'} h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
+                                className={`${accidents === 'n'? 'bg-[#1DCD6D]' : ''} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
                                 <Image src={crossSvg} />
                                 No
                             </button>
@@ -176,13 +176,13 @@ const Page6 = () => {
                     <div className='flex gap-3 my-5'>
                         <button 
                             onClick={()=>handleHealth('y')}
-                            className={`${health === 'y'? 'bg-[#1DCD6D]' : 'bg-transparent'} h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
+                            className={`${health === 'y'? 'bg-[#1DCD6D]' : ''} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
                             <Image src={markSvg} />
                             Yes
                         </button>
                         <button 
                             onClick={()=>handleHealth('n')}
-                            className={`${health === 'n'? 'bg-[#1DCD6D]' : 'bg-transparent'} h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
+                            className={`${health === 'n'? 'bg-[#1DCD6D]' : ''} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] border rounded w-[180px] flex justify-center items-center gap-3`}>
                             <Image src={crossSvg} />
                             No
                         </button>

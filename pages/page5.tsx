@@ -83,12 +83,13 @@ const Page5 = () => {
                 </select>
                 
                 <h3>When would you preferred t be contacted?</h3>
+                {/* now and schedule quote button */}
                 <div className='flex gap-3 mt-5'>
-                    <button onClick={() => handleNowClick('n')} className={`${contact === 'n' ? "bg-[#E5AD3E]" : "bg-transparent"} h-[64px] rounded border w-[180px] flex justify-center items-center gap-3`}>
+                    <button onClick={() => handleNowClick('n')} className={`${contact === 'n' ? "bg-[#E5AD3E]" : ""} hover:bg-[#E5AD3E] duration-300 ease-in-out h-[64px] rounded border w-[180px] flex justify-center items-center gap-3`}>
                         <Image src={tick} />
                         Now
                     </button>
-                    <button onClick={()=>handleScheduleClick('y')} className={`${contact === 'y' ? "bg-[#1DCD6D]" : "bg-transparent"} h-[64px] rounded border w-[180px] flex justify-center items-center gap-3`}>
+                    <button onClick={()=>handleScheduleClick('y')} className={`${contact === 'y' ? "bg-[#1DCD6D]" : ""} hover:bg-[#1DCD6D] duration-300 ease-in-out h-[64px] rounded border w-[180px] flex justify-center items-center gap-3`}>
                         <Image src={calender} />
                         Schedule quote
                     </button>
@@ -116,14 +117,14 @@ const Page5 = () => {
                                     />
                                     <div className='flex gap-3 justify-center'>
                                         {/* cancel button */}
-                                        <button type='reset' onClick={reset} className="h-[51px] border rounded w-[155px] flex justify-center items-center gap-3">
+                                        <button type='reset' onClick={reset} className="hover:bg-[#882020] duration-300 ease-in-out h-[51px] border rounded w-[155px] flex justify-center items-center gap-3">
                                             Cancel
                                         </button>
                                         {/* schedule button */}
                                         <button 
                                             type='submit' 
                                             disabled={!active}
-                                            className="disabled:cursor-no-drop bg-[#1DCD6D] h-[51px] rounded w-[155px] flex justify-center items-center gap-3">
+                                            className="disabled:cursor-no-drop hover:bg-[#1DCD6D] duration-300 ease-in-out h-[51px] border rounded w-[155px] flex justify-center items-center gap-3">
                                             Schedule
                                         </button>
                                     </div>
@@ -137,7 +138,7 @@ const Page5 = () => {
                                 </div>
                                 <h2 className='mb-3 text-[35px]'>Quote Scheduled</h2>
                                 <p className='text-[14px] mt-5 mb-20'>You have successfully scheduled a quote for <span>{date}</span></p>
-                                <button onClick={reset} className="h-[51px] border rounded w-[100%] flex justify-center items-center gap-3">
+                                <button onClick={reset} className="hover:bg-[#882020] duration-300 ease-in-out h-[51px] border rounded w-[100%] flex justify-center items-center gap-3">
                                     Cancel
                                 </button>
                             </div>

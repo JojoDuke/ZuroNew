@@ -17,10 +17,49 @@ import Link from "next/link";
 import { useState } from "react";
 
 function page2() {
-    const [type, setType] = useState('home')
+    const [type, setType] = useState('HomeOwners')
     const handleClick = (card) => {
         setType(card)
     }
+
+    const insuranceList = [
+      {
+        src: homeOwners,
+        name: "HomeOwners"
+      },
+      {
+        src: condoInsurance,
+        name: "Condo"
+      },
+      {
+        src: rentersInsurance,
+        name: "Renters"
+      },
+      {
+        src: autoInsurance,
+        name: "Auto"
+      },
+      {
+        src: motorcycleInsurance,
+        name: "Motocycle"
+      },
+      {
+        src: lifeInsurance,
+        name: "Life"
+      },
+      {
+        src: atvInsurance,
+        name: "Atv"
+      },
+      {
+        src: boatInsurance,
+        name: "Boat"
+      },
+      {
+        src: petInsurance,
+        name: "Pet"
+      },
+    ]
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
       <Head>
@@ -32,85 +71,27 @@ function page2() {
 
         <ProgressNav progress={progress2} alt={'progress2'}/>
 
-       <section className="my-10 text-white flex flex-col">
+        <section className="my-10 text-white flex flex-col">
         <Heading />
 
         <p className="text-center font-bold my-8 mx-auto w-[470px]">Select Insurance Type</p>
 
         {/* Insurance Types */}
         <div className="flex gap-5 flex-wrap justify-center m-auto w-max-[]" style={{minWidth: '300px', maxWidth: '636.14px'}}>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'home' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('home')}>
-            <Image
-              src={homeOwners}
-              alt="home owners icon"
-              width="100px"
-            />
-            <p>Homeowners Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'condo' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}} onClick={() => handleClick('condo')}>
-            <Image
-              src={condoInsurance}
-              alt="condo insurance icon"
-              width="100px"
-            />
-            <p>Condo <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'rent' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('rent')}>
-            <Image
-              src={rentersInsurance}
-              alt="renters insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'auto' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('auto')}>
-            <Image
-              src={autoInsurance}
-              alt="auto insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'motorcycle' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('motorcycle')}>
-            <Image
-              src={motorcycleInsurance}
-              alt="motocycle insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'life' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('life')}>
-            <Image
-              src={lifeInsurance}
-              alt="life insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'atv' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('atv')}>
-            <Image
-              src={atvInsurance}
-              alt="atv insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'boat' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('boat')}>
-            <Image
-              src={boatInsurance}
-              alt="boat insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
-          <div className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer" style={{background: `${type === 'pet' ? 'linear-gradient(#954DEE, #5D05CB)' : '#181818'}`}}  onClick={() => handleClick('pet')}>
-            <Image
-              src={petInsurance}
-              alt="pet insurance icon"
-              width="100px"
-            />
-            <p>Renters <br/>Insurance</p>
-          </div>
+          {
+            insuranceList.map(list => {
+              return(
+                <div key={list.name} className="h-40 w-40 rounded-lg flex flex-col justify-center cursor-pointer bg-[#181818] hover:bg-[#954DEE] duration-300 ease-in-out" style={{background: `${type === list.name ? 'linear-gradient(#954DEE, #5D05CB)' : ''}`}}  onClick={() => handleClick(list.name)}>
+                  <Image
+                    src={list.src}
+                    alt="pet insurance icon"
+                    width="100px"
+                  />
+                  <p>{list.name} <br/>Insurance</p>
+                </div>
+              )
+            })
+          }
         </div>
 
         {/* next button */}
